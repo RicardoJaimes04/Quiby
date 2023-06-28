@@ -1,0 +1,97 @@
+*{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   
+    }
+    
+    h1 {
+        text-align: center;
+        color: white;
+        font-size: 40px;
+    }
+    body {
+        background-image: url("/images/white3.avif");
+  background-repeat: no-repeat;
+
+  background-size: cover;
+    
+    
+    }
+    section{
+        text-align: center;
+        background-color: white;
+        margin-left: 30%;
+        margin-right: 30%;
+       
+    }
+    
+
+    
+  
+    /* selectores de la barra de navegación */
+    
+    
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: blueviolet;
+        border-radius: 20%;
+    }
+    
+    li {
+        float: left;
+    }
+    
+    li a {
+        display: block;
+        color: #DFF6FF;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+    
+    li a:hover{
+    
+        background-color: black;
+    }
+    .active {
+        background-color: purple;
+    }
+    
+    /* selectores del formulario Clientes */
+    
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+      }
+      
+      label {
+        margin-bottom: 10px;
+        font-weight: bold;
+        color: white;
+      }
+      
+      input, textarea {
+        padding: 5px;
+        margin-bottom: 15px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+      }
+      
+      input[type="submit"] {
+        background-color: purple;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      
+      input[type="submit"]:hover {
+        background-color: #3e8e41;
+      }
+    
+    
