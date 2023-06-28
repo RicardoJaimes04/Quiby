@@ -1,0 +1,8 @@
+Buen día profesor, esta es la interfaz visual BETA, Solo funciona el login y la página principal.
+
+intentamos crearla con bootstrap pero pensamos en un futuro hacerla netamente con html, css y js. Solo que nos quisimos aventurar con este framework y que quedara responsive.
+
+La idea visual es la presentada, sin embargo esperamos agregar más cosas como una nueva sección en el index, modificar el el login y otras herramientas para enlazar con el backend.
+
+
+Esperamos que le guste, Muchas gracias.
