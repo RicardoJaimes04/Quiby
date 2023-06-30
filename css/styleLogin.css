@@ -1,4 +1,4 @@
-*{
+﻿*{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
    
     }
@@ -9,7 +9,7 @@
         font-size: 40px;
     }
     body {
-        background-image: url("/images/white3.avif");
+        background-image: url("../images/white3.avif");
   background-repeat: no-repeat;
 
   background-size: cover;
