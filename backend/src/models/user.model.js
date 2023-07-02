@@ -29,7 +29,7 @@ const userSchema = new mongoose.Schema({
         require: true
     }
 },{
-    timestamps:true
+    timestamps:true //se crea dos nuevos atributos que guarda la fecha de creacion y de la actualizacion
 })
 
 export default mongoose.model('User', userSchema) //de acuerdo al esquema creado se usa User para ir guardando los usuarios 

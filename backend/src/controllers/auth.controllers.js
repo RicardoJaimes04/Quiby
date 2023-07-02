@@ -19,7 +19,7 @@ export const register = async(req, res) => {
         const Usersaved = await newUser.save(); //es asincrono por ende lleva un await y lleva un async todo lo que lo qu elo contenga en este caso la linea 3
 
         //creacion del token, para mostrar el token es como res.json({token})
-        const token = await creaciontoken({id:Usersaved.id})
+        const token = await creaciontoken({id: Usersaved._id})
         //creacion de una cookie 
         res.cookie("token", token);
         
@@ -32,7 +32,42 @@ export const register = async(req, res) => {
         })
         console.log(req.body);
     }catch (error){
-        console.log(error);
+        console.log(error); //puede cambiar por...  res.status(500).json({message:error.message})
     }
-}
-export const login = (req, res) => res.send("login");
+};
+
+export const login = async(req, res) => {   //pide cedula y contraseña, verifica que este la cedula y luego con el id de usuario verifica la contraseña
+    const {cedula, contrasena} = req.body
+     try{
+        const userfound = await User.findOne({cedula});
+        if(!userfound) return res.status(404).json({message: "Documento no encontrado"});
+
+        const match = await bcrypt.compare(contrasena, userfound.contrasena);
+        if(!match) return res.status(404).json({message: "Contraseña incorrecta"});
+ 
+         //creacion del token, para mostrar el token es como res.json({token})
+         const token = await creaciontoken({id: userfound._id});
+         //creacion de una cookie 
+         res.cookie("token", token);
+         
+         res.json({
+             id:userfound._id,
+             nombres:userfound.nombres,
+             apellidos:userfound.apellidos,
+             correo:userfound.correo
+         })
+         console.log(req.body);
+     }catch (error){
+         console.log(error); //puede cambiar por...  res.status(500).json({message:error.message})
+     }
+ };
+
+export const logout = (req, res) => {
+    res.cookie('token', "", { expires:new Date(0),});
+    res.json({message: "logout"});
+    return res.sendStatus(200);
+};
+
+export const perfil = (req, res) => {
+    console.log(req.usuario);
+    res.send('perfil')};
