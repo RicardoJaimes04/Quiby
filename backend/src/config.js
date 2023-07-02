@@ -1,0 +1,1 @@
+export const token_secreto = 'secreto1234'
